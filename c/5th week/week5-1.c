@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <stdio.h>
 
 void change_value();
@@ -30,4 +31,38 @@ void change_array(int arr[]) {
     for(int i = 0; i < 3; i++) {
         arr[i] = arr[i] * 2;
     }
+=======
+#include <stdio.h>
+
+void change_value();
+void change_array();
+
+int main() {
+    int arr[3] = {10, 20, 30};
+
+    change_value(arr[0]);
+
+    printf("값 하나 전달 :");
+    for(int i = 0; i < 3; i++)
+        printf("%d ", arr[i]);
+    
+    printf("\n");
+
+    change_array(arr);
+    printf("배열 하나 전달 :");
+    for(int i = 0; i < 3; i++)
+        printf("%d ", arr[i]);
+
+    return 0;
+}
+
+void change_value(int x) {
+    x = x * 2;
+}
+
+void change_array(int arr[]) {
+    for(int i = 0; i < 3; i++) {
+        arr[i] = arr[i] * 2;
+    }
+>>>>>>> 46ce7bb5e1dcb53df1ed9c051a76b523acb7b30c
 }
