@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const numbers = [1, 3, 5, 7];
+
+        let newArray1 = numbers.map(function(value, index, numbers) {
+            return 10 + value;
+        })
+        document.write(newArray1, "<br>");
+
+        let newArray2 = numbers.map(loopNumber2);         
+        function loopNumber2(item, index) {             
+            return 10 * item;         
+        };         
+        document.write(newArray2, "<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

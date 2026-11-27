@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        setTimeout(() => {
+            document.write(`<h2>1초 후에 실행</h2>`)
+            },
+            1*1000
+        ) 
+
+        let count = 0;
+
+        setInterval(() => {
+            document.write(`<h3>1초마다 실행됩니다.(${count+1}번째)</h3>`);
+            count++;
+            },
+            1*1000
+        )
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

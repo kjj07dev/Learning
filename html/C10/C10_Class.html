@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 성적표</title>
+    <script>
+        class Student {
+            constructor(이름, 국어, 영어, 수학, 과학) {
+                this.이름 = 이름;
+                this.국어 = 국어;
+                this.영어 = 영어;
+                this.수학 = 수학;
+                this.과학 = 과학;
+            }
+            getSum() {
+                return this.국어 + this.영어 + this.수학 + this.과학;
+            }
+            getAverage() {
+                return this.getSum() / 4;
+            }
+            toString() {
+                return `<tr><td>${this.이름}</td><td>${this.getSum()}점</td><td>${this.getAverage().toFixed(1)}점</td></tr>`;
+            }
+        }
+
+        const students = [];
+        students.push(new Student('구름', 87, 98, 88, 90));
+        students.push(new Student('별이', 92, 98, 96, 88));
+        students.push(new Student('겨울', 76, 96, 94, 86));
+        students.push(new Student('바다', 98, 52, 98, 92));
+
+        function titlePrint() {
+            document.write("<table>");
+            document.write("<tr><th>이름</th><th>총점</th><th>평균</th></tr>");
+        }
+
+        document.write("<style>table { border-collapse: collapse; } th, td { width: 100px; text-align: center; border: 1px solid #ccc; padding: 5px; }</style>");
+
+        titlePrint();
+
+        for (let s of students) {
+            document.write(s.toString());
+        }
+        document.write("</table>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function runExample(willExcept) {
+            try {
+                document.write("1. try 실행 <br>");
+                willExcept.byeBye();
+            }
+            catch (exception) {
+                document.write("2. catch 실행: " + exception.name + "<br>");
+            }
+            finally {
+                document.write("3. finally 실행 <br>");
+            }
+        }
+
+        document.write("<b>[정상 실행]</b><br>");
+        runExample({
+            byeBye() {
+                document.write("안녕히 가세요! <br>");
+            }
+        });
+
+        document.write("<br><b>[예외 발생]</b><br>");
+        runExample({});
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let timerID;
+        let startTimer = function(time) {
+            timerD = setTimeout('load("https://www.inhatc.ac.kr")', time);
+
+            document.getElementById("img").title = "타이머 작동 시작...";
+        }
+
+        let concelTimer = function() {
+            cleartimeout(timerID);
+        }
+        let load = function(url) {
+            window.location = url;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

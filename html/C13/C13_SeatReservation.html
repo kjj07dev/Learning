@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" href="css/Reservation.css">
+</head>
+<body>
+    <h2>강의실 좌석 예약</h2>
+    <div class="board">칠판</div>
+    
+    <div class="seats">
+        <button class="seat">A1</button>
+        <button class="seat">A2</button>
+        <button class="seat">A3</button>
+        <button class="seat">B1</button>
+        <button class="seat">B2</button>
+        <button class="seat">B3</button>
+        <button class="seat">C1</button>
+        <button class="seat">C2</button>
+        <button class="seat">C3</button>
+        <button class="seat">D1</button>
+        <button class="seat">D2</button>
+        <button class="seat">D3</button>
+    </div>
+
+    <p id="result"></p>
+    <button id="resetBtn">전체 해제</button>
+
+    <script>
+        const seats = document.querySelectorAll(".seat");
+        const result = document.querySelector("#result");
+        const resetBtn = document.querySelector("#resetBtn");
+        
+        function updateResult() {
+            const selectedSeats = [];
+            
+            for (const seat of seats) {
+                if (seat.classList.contains("selected")) {
+                    selectedSeats.push(seat.textContent);
+                }
+            }
+
+            const seatNames = selectedSeats.join(", ") || "없음";
+            const remaining = seats.length - selectedSeats.length;
+
+            result.textContent = `선택 좌석: ${seatNames} / 남은 좌석: ${remaining}석`;
+        }
+
+        for (const seat of seats) {
+            seat.addEventListener("click", () => {
+                seat.classList.toggle("selected");
+                updateResult();
+            });
+        }
+
+        resetBtn.addEventListener("click", () => {
+            for (const seat of seats) {
+                seat.classList.remove("selected");
+            }
+            updateResult();
+        });
+
+        updateResult();
+    </script>
+</body>
+</html>

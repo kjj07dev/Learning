@@ -1,0 +1,33 @@
+       body {
+            max-width: 360px;
+            margin: 40px auto;
+            padding: 0 16px;
+            font-family: "맑은 고딕", sans-serif;
+            text-align: center;
+        }
+
+        .board {
+            padding: 10px;
+            background-color: #e8eef5;
+            border-radius: 6px;
+        }
+
+        .seats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 10px;
+            margin: 18px 0;
+        }
+
+        button {
+            padding: 10px;
+            border: 1px solid #a4b3c3;
+            border-radius: 6px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .seat.selected {
+            background-color: #2457a6;
+            color: white;
+        }

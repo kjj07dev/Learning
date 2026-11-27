@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const pets = ['개', '고양이', '곰', '말'];
+
+        document.write(`[pets] --> ${pets}<br>`)
+
+        pets.splice(2) //2������ ������ ����
+        document.write(`[splice(2)] --> ${pets}<br>`)
+
+        pets.splice(0, 1);  // 0�� ���� 1�� ����
+        document.write(`[splice(0,1)] --> ${pets}<br>`)
+
+        pets.splice(0, 0, '햄스터'); // ù��° ��ġ�� ����
+        document.write(`[splice(0,0, '햄스터')] --> ${pets}<br>`)
+
+        pets.splice(1,1,'거북이','앵무새');
+        document.write(`[splice(1,1,''거북이','앵무새')] --> ${pets}<br>`)
+
+        const weeks = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+        // slice() : �迭�� �Ϻκ��� ����
+        document.write(`[slice()] -- > ${weeks.slice()}<br>`)
+        document.write(`[slice(2)] -- > ${weeks.slice(2)}<br>`)
+        document.write(`[slice(2, 4)] -- > ${weeks.slice(2, 4)}<br>`)
+        document.write(`[slice(-2)] -- > ${weeks.slice(-2)}<br>`)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

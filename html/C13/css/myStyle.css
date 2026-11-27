@@ -1,0 +1,50 @@
+/* css/myStyle.css */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .field-row {
+      margin-bottom: 8px;
+    }
+
+    label {
+      display: inline-block;
+      width: 120px;
+      margin-bottom: 5px;
+    }
+
+    input {
+      padding: 4px 6px;
+      margin-bottom: 8px;
+    }
+
+    /* 에러난 입력창 */
+    input.error-focus {
+      border: 1px solid red;
+    }
+
+    /* 에러난 입력창에 포커스가 있을 때 노란색 배경 */
+    input.error-focus:focus {
+      background-color: yellow;
+      outline: none;
+    }
+
+    #jumin1 {
+      width: 80px;
+      text-align: center;
+    }
+    #jumin2 {
+      width: 5px;
+      text-align: center;
+    }
+
+    .error-msg {
+      color: red;
+      font-size: 0.9em;
+      margin-left: 5px;
+    }

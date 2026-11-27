@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font: 14px Malgun Gothic, "맑은고딕", sans-serif;
+        }
+        .zoomBtnZone {
+            font-size: 14px;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <button id="openFileButton">Open</button><br><br>
+    <p class="zoomBtnZone">
+        <button class="zoomOutBtn">-</button>
+        <button class="originBtn">100%</button>
+        <button class="zoomInBtn">+</button>
+    </p>
+    <p class="fontSize">14px</p>
+    <div id="output">...</div>
+    <script>
+        $(function () {
+            let baseFontSize = 14;
+            const defaultFontSize = 14;
+            function updateOriginBtnText() {
+            let percent = Math.round((baseFontSize / defaultFontSize) * 100);
+            $(".originBtn").text(percent + "%");
+            }
+            function zoomInOut() {
+            if ($(this).hasClass("zoomOutBtn")) {
+            if (baseFontSize <= 8) return;
+            baseFontSize--;
+            } else if ($(this).hasClass("zoomInBtn")) {
+            if (baseFontSize >= 30) return;
+            baseFontSize++;
+            } else if ($(this).hasClass("originBtn")) {
+            baseFontSize = defaultFontSize;
+            }
+            $(".fontSize").text(baseFontSize + "px");
+            $("#output").css({ fontSize: baseFontSize + "px" });
+            updateOriginBtnText();
+            }
+            $(".zoomBtnZone button").on("click", zoomInOut);
+            $("#openFileButton").on("click", function () {
+                const input = $("<input type='file' accept='text/plain'>");
+                input.on("change", function (event) {
+                    const file = event.target.files[0];
+                    const reader = new FileReader();
+                    reader.onload = function () {
+                        $("#output").text(reader.result);
+                    };
+                    reader.readAsText(file, "utf8");
+                });
+                input.click();
+            });
+            updateOriginBtnText();
+        });
+</script>
+</body>
+</html>

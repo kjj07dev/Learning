@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sumEvenNumbers(start, end, callback) {
+            let result = 0;
+            for(let i = start; i <= end; i++) {
+                if(i%2 == 0) {
+                    result += i;
+                }
+            }
+            callback(result);
+        }
+
+        sumEvenNumbers(1, 100, function(result) {
+            document.write("<h3>1 부터 100까지 짝수의 합은: " + result + "</h3>");
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

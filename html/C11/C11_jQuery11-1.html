@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="js/jquery-3.7.1.js"> </script>
+<body>
+    <section id="sec_1">
+        <h2>첫 번째 제목</h2>
+        <p>첫 번째 문단</p>
+    </section>
+    
+    <section id="sec_2">
+        <h2>두 번째 제목</h2>
+        <p>두 번째 문단</p>
+    </section>
+    
+    <div id="result"></div>
+    <br>
+    
+    <script>
+        $(function () {
+            const result_1 = $("#sec_1").html();
+            $("#sec_1 p").html('<a href="#">Text1</a>');
+    
+            const result_2 = $("#sec_2").text();
+            $("#sec_2 p").text("text()2");
+    
+            $("#result").html(
+                `${result_1.trim()} ${result_2.trim()} `
+            );
+        });
+    </script>
+</body>
+</html>
